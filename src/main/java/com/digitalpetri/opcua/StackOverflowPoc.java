@@ -22,14 +22,14 @@ public class StackOverflowPoc {
 
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
-            String jarName = new File(
+            File jarFile = new File(
                 StackOverflowPoc.class.getProtectionDomain()
                     .getCodeSource()
                     .getLocation()
                     .getPath()
-            ).getName();
+            );
 
-            System.err.printf("usage: java -jar %s <endpointUrl>\n", jarName);
+            System.err.printf("usage: java -jar %s <endpointUrl>\n", jarFile.getName());
             System.exit(-1);
         }
 
